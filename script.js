@@ -18,11 +18,13 @@ const ball = {
 // Draw ball on canvas
 function drawBall() {
   ctx.beginPath();
-  ctx.arc(ball.x, ball.y, 50, 0, Math.PI * 2, true);
+  ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2, true);
   ctx.fillStyle = '#0095dd';
   ctx.fill();
   ctx.closePath();
 }
+
+drawBall();
 
 // Rules and close event handlers
 rulesBtn.addEventListener('click', () => rules.classList.add('show'));
