@@ -18,7 +18,7 @@ const ball = {
 // Create paddle props
 const paddle = {
   x: canvas.width / 2 - 40,
-  x: canvas.height - 20,
+  y: canvas.height - 20,
   w: 80,
   h: 10,
   speed: 8
@@ -33,7 +33,22 @@ function drawBall() {
   ctx.closePath();
 }
 
-drawBall();
+// Draw paddle on canvas
+function drawPaddle() {
+  ctx.beginPath();
+  ctx.rect(paddle.x, paddle.y, paddle.w, paddle.h);
+  ctx.fillStyle = '#0095dd';
+  ctx.fill();
+  ctx.closePath();
+}
+
+// Draw everything
+function draw() {
+  drawBall();
+  drawPaddle();
+}
+
+draw();
 
 // Rules and close event handlers
 rulesBtn.addEventListener('click', () => rules.classList.add('show'));
