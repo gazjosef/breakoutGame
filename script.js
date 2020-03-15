@@ -15,6 +15,15 @@ const ball = {
   dy: -4
 };
 
+// Create paddle props
+const paddle = {
+  x: canvas.width / 2 - 40,
+  x: canvas.height - 20,
+  w: 80,
+  h: 10,
+  speed: 8
+};
+
 // Draw ball on canvas
 function drawBall() {
   ctx.beginPath();
