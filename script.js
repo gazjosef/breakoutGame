@@ -6,6 +6,9 @@ const ctx = canvas.getContext('2d');
 
 let score = 0;
 
+const brickRowCount = 9;
+const brickColumnCount = 5;
+
 // Create ball props
 const ball = {
   x: canvas.width / 2,
@@ -23,6 +26,16 @@ const paddle = {
   w: 80,
   h: 10,
   speed: 8
+};
+
+// Create brick props
+const brickInfo = {
+  w: 70,
+  h: 20,
+  padding: 10,
+  offsetX: 45,
+  offsetY: 60,
+  visible: true
 };
 
 // Draw ball on canvas
