@@ -25,7 +25,8 @@ const paddle = {
   y: canvas.height - 20,
   w: 80,
   h: 10,
-  speed: 8
+  speed: 8,
+  dx: 0
 };
 
 // Create brick props
@@ -104,6 +105,9 @@ function movePaddle() {
 
 // Draw everything
 function draw() {
+  // Clear canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   drawBall();
   drawPaddle();
   drawScore();
@@ -132,7 +136,14 @@ function keyDown(e) {
 
 // Keyup event
 function keyUp(e) {
-  console.log(2);
+  if (
+    e.key === 'Right' ||
+    e.key === 'ArrowRight' ||
+    e.key === 'Left' ||
+    e.key === 'ArrowLeft'
+  ) {
+    paddle.dx = 0;
+  }
 }
 
 // Keyboard event handlers
